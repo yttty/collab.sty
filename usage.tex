@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{xspace}
+
+% use collab package
+% hideedits: accept all edits and hide all edit marks
+% hidecomments: hideedits and hide all comments
+\usepackage[]{collab} %hideedits,hidecomments
+
+% \yttty: the command of adding comments
+% TY: the abbrevation that appears in the document
+\newcommand{\yttty}[1]{\nbc{TY}{#1}{orange}}
+
+
+\title{A 30-Second Readme for \texttt{collab.sty}}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+\texttt{collab.sty} enables you to revise \LaTeX\xspace documents in a better way.
+
+\section{Usage}
+\subsection{usepackage command}
+\noindent\emph{No macro: show all edits and comments.}
+\begin{verbatim*}
+\usepackage[]{collab}
+\end{verbatim*}
+
+\noindent\emph{\texttt{[hideedits]}: accept all edits and hide all edit marks.}
+\begin{verbatim*}
+\usepackage[hideedits]{collab}
+\end{verbatim*}
+
+\noindent\emph{\texttt{[hidecomments]}: \texttt{hideedits} + hide all comments}
+\begin{verbatim*}
+\usepackage[hidecomments]{collab}
+\end{verbatim*}
+
+\subsection{Define the comment}
+\noindent\texttt{\\yttty}: the command of adding comments
+
+\noindent\texttt{TY}: the abbrevation that appears in the document
+
+\begin{verbatim*}
+\newcommand{\yttty}[1]{\nbc{TY}{#1}{orange}}
+\end{verbatim*}
+
+\subsection{Syntax}
+\subsubsection{Insertion}
+Source Code:
+\begin{verbatim}
+insert \ins{something}
+\end{verbatim}
+Appearence: insert \ins{something}
+
+\subsubsection{Deletion}
+Source Code:
+\begin{verbatim}
+delete \del{something}
+\end{verbatim}
+Appearence: delete \del{something}
+
+\subsubsection{Change}
+Source Code:
+\begin{verbatim}
+change \chg{A}{to B}
+\end{verbatim}
+Appearence: change \chg{A}{to B}
+
+\subsubsection{Wavy Lines}
+Source Code:
+\begin{verbatim}
+\ugh{a worng wrod}
+\end{verbatim}
+Appearence: \ugh{a worng wrod}
+
+\subsubsection{Comment}
+Source Code:
+\begin{verbatim}
+\yttty{This is a comment.}
+\end{verbatim}
+Appearence: \yttty{This is a comment.}
+
+\section{Example}
+
+LaTeX is a software system for document preparation. When writing, the writer uses \del{truely} \yttty{Conciseness!} plain text as opposed to the formatted text found in "What You See Is What You Get" word processors like Microsoft Word, LibreOffice Writer \ins{and Apple Pages}.
+
+You don't have to pay for using LaTeX, i.e., there are \chg{high}{no} license fees, etc. But you are, of course, invited to \ugh{support the maintenance and development efforts} through a donation to the TeX Users Group (choose LaTeX Project contribution) if you are satisfied with LaTeX \yttty{Please consider a donation!}.
+
+\end{document}
